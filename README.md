@@ -45,7 +45,7 @@ A command-line application for fetching and displaying RSS and Reddit feeds, imp
    ```bash
     mvn compile
     mvn exec:java
-###📝 Usage
+### 📝 Usage
 Create a subscriptions.json file in the project root with the following structure:
 
 ```json
