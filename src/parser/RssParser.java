@@ -1,3 +1,4 @@
+
 package parser;
 
 /* Esta clase implementa el parser de feed de tipo rss (xml)

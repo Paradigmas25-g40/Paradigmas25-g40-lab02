@@ -1,6 +1,5 @@
 package httpRequest;
 
-
 /* Esta clase se encarga de realizar efectivamente el pedido de feed al servidor de noticias
  * Leer sobre como hacer una http request en java
  * https://www.baeldung.com/java-http-request

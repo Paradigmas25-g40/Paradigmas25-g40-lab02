@@ -42,11 +42,11 @@ public class Subscription {
 		Subscription a = new Subscription(null);
 	
 		SingleSubscription s0 = new SingleSubscription("https://www.chicagotribune.com/arcio/rss/category/%s/?query=display_date:[now-2d+TO+now]&sort=display_date:desc", null, "rss");
-		s0.setUlrParams("business");		
+		s0.setUrlParams("business");		
 		
 		SingleSubscription s1 = new SingleSubscription("https://rss.nytimes.com/services/xml/rss/nyt/%s.xml", null, "rss");
-		s1.setUlrParams("Business");
-		s1.setUlrParams("Technology");
+		s1.setUrlParams("Business");
+		s1.setUrlParams("Technology");
 
 		a.addSingleSubscription(s0);		
 		a.addSingleSubscription(s1);
