@@ -15,13 +15,32 @@ public abstract class Heuristic {
 			"Federer", "Person",
 			"USA", "Country",
 			"Russia", "Country"
-			);
+	);
+	private static Map<String, String> subcategoryMap = Map.of(
+        "USA", "país",
+        "Russia", "país",
+        "Messi", "nombre",
+        "Federer", "nombre"
+    );
+
+    private static Map<String, String> topicMap = Map.of(
+        "Messi", "deportes",
+        "Federer", "deportes",
+        "Trump", "política",
+        "Biden", "política"
+    );
 	
-	
-	public String getCategory(String entity){
-		return categoryMap.get(entity);
-	}
-	
+    public String getCategory(String entity){
+        return categoryMap.getOrDefault(entity, "otro");
+    }
+
+    public String getSubcategory(String entity){
+        return subcategoryMap.getOrDefault(entity, "otro");
+    }
+
+    public String getTopic(String entity){
+        return topicMap.getOrDefault(entity, "otro");
+    }
 	
 	public abstract boolean isEntity(String word);
 		

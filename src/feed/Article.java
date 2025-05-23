@@ -57,6 +57,10 @@ public class Article {
 	public void setLink(String link) {
 		this.link = link;
 	}
+
+	public List<NamedEntity> getNamedEntityList() {
+    	return namedEntityList;
+	}	
 	
 	@Override
 	public String toString() {
@@ -77,18 +81,19 @@ public class Article {
 	
 	public void computeNamedEntities(Heuristic h){
 		String text = this.getTitle() + " " +  this.getText();  
-			
 		String charsToRemove = ".,;:()'!?\n";
 		for (char c : charsToRemove.toCharArray()) {
 			text = text.replace(String.valueOf(c), "");
 		}
-			
 		for (String s: text.split(" ")) {
 			if (h.isEntity(s)){
 				NamedEntity ne = this.getNamedEntity(s);
 				if (ne == null) {
-					this.namedEntityList.add(new NamedEntity(s, null,1));
-				}else {
+                	String category = h.getCategory(s);
+                	String subcategory = h.getSubcategory(s);
+                	String topic = h.getTopic(s);
+                	this.namedEntityList.add(new NamedEntity(s, category, subcategory, topic, 1));
+				} else {
 					ne.incFrequency();
 				}
 			}

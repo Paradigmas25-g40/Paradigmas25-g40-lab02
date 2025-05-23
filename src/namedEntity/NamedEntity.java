@@ -6,14 +6,24 @@ package namedEntity;
 public class NamedEntity {
 	String name;
 	String category; 
+	String subcategory;
+	String topic;
 	int frequency;
-	
-	public NamedEntity(String name, String category, int frequency) {
+
+
+	public NamedEntity(String name, String category, String subcategory, String topic, int frequency) {
 		super();
 		this.name = name;
 		this.category = category;
 		this.frequency = frequency;
+		this.subcategory = subcategory;
+		this.topic = topic;
 	}
+
+    // Constructor para compatibilidad
+    public NamedEntity(String name, String category, int frequency) {
+        this(name, category, null, null, frequency);
+    }
 
 	public String getName() {
 		return name;
@@ -29,6 +39,22 @@ public class NamedEntity {
 
 	public void setCategory(String name) {
 		this.name = name;
+	}
+
+	public String getSubcategory(){
+		return subcategory;
+	}
+
+	public void setSubcategory(String subcategory) {
+		this.subcategory = subcategory;
+	}
+
+	public String getTopic() {
+		return topic;
+	}
+
+	public void setTopic(String topic){
+		this.topic = topic;
 	}
 
 	public int getFrequency() {
