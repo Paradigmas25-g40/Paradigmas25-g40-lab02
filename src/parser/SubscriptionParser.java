@@ -3,6 +3,8 @@ package parser;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONTokener;
+
+import feed.Feed;
 import subscription.SingleSubscription;
 import subscription.Subscription;
 
@@ -52,4 +54,10 @@ public class SubscriptionParser extends GeneralParser {
         return subscriptions; 
         //Se devuelve el objeto subscription con todas las suscripciones cargadas.
     }
+
+    @Override
+    public Feed parse(String xml, String siteName) {
+        throw new UnsupportedOperationException("SubscriptionParser no implementado.");
+    }
+    
 }

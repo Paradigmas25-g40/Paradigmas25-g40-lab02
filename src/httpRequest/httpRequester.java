@@ -16,13 +16,11 @@ import parser.SubscriptionParser;
 
 public class httpRequester {
 	private final HttpClient client;
-	private final SubscriptionParser parser;
 	
 	public httpRequester() {
 		this.client = HttpClient.newBuilder()
 				.version(HttpClient.Version.HTTP_2)
 				.build();
-		this.parser = new SubscriptionParser();
 	}
 	
 	public String getFeedRss(String urlFeed){
